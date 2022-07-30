@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProductComponent } from './pages/add-product/add-product.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { UpdateCustomerComponent } from './pages/update-customer/update-customer.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",redirectTo:"homepage"},
   {path:"add-product",component:AddProductComponent},
-  {path:"homepage",component:HomepageComponent}
+  {path:"homepage",component:HomepageComponent},
+  {path:"register",component:RegisterComponent},
+  {path:"dashboard/customer",component:DashboardComponent},
+  {path:"dashboard/customer/:id",component:UpdateCustomerComponent}
 
 ];
 

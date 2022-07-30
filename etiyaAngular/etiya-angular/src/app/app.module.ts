@@ -5,12 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import {HttpClientModule} from '@angular/common/http';
-import { CategoryListComponent } from './components/category-list/category-list.component'
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { UpdateCustomerComponent } from './pages/update-customer/update-customer.component'
 
 @NgModule({
   declarations: [
@@ -20,13 +23,17 @@ import { CategoryListComponent } from './components/category-list/category-list.
     HomepageComponent,
     NavbarComponent,
     ProductCardComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    RegisterComponent,
+    DashboardComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
