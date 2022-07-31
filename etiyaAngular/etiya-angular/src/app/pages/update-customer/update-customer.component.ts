@@ -46,16 +46,19 @@ export class UpdateCustomerComponent implements OnInit {
   }
 
   update() {
-    if (this.updateCustomerForm.valid) {
-      this.customer = Object.assign({}, this.updateCustomerForm.value);
+    if (this.updateCustomerForm.invalid) {
+      alert("Please fill the required areas!!!")
+      return;
     }
-    console.log(this.customer)
-    this.customerService.update(this.customer).subscribe((data) => {
-      alert("Customer succesfully updated!")
-      setTimeout(() => {
-        location.reload();
-      }, 1000);
-    });
+    this.customer = Object.assign({}, this.updateCustomerForm.value);
+      this.customerService.update(this.customer).subscribe((data) => {
+        setTimeout(() => {
+          location.reload();
+          location.href="/homepage"
+          alert("Customer succesfully updated!")
+        }, 1000);
+      });
+   
   }
 }
 
