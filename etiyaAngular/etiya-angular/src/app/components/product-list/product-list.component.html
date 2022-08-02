@@ -1,9 +1,11 @@
 <p>Sepetinizde {{cartItems.length}} ürün var</p>
-
+<span  class="" style="color: black; float: right;">{{today | date:"medium"}}</span>
+<input type="search" class="form-control" style="width: 288px" placeholder="Search" [(ngModel)]="filterText" >
+<br>
 <ng-template [ngIf]="productList" [ngIfElse]="loading">
     <div *ngIf="productList.length >0; else emptyProduct">
     <div class="row">
-            <div class="col-4" *ngFor="let p of productList">
+            <div class="col-4" *ngFor="let p of productList | filterProduct:filterText">
                 <etiya-product-card (onBtnClick)="addToCart($event)" [product]="p"></etiya-product-card>
             </div>
         </div>
@@ -19,3 +21,4 @@
         <span class="visually-hidden">Loading...</span>
     </div>
 </ng-template>
+<div *ngIf="!(productList | filterProduct:filterText)?.length">No Result Found!</div> 

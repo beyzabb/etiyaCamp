@@ -9,8 +9,10 @@ import { ProductsService } from 'src/app/services/products/products.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  today: number = Date.now();
   productList!: Product[] //productList:any[]=[]
   cartItems:any[]=[]
+  filterText:string="";
   constructor(private productsService:ProductsService) { }
 
   ngOnInit(): void {

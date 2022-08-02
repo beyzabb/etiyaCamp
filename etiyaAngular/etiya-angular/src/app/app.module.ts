@@ -18,6 +18,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ProductFormComponent } from './pages/product-form/product-form.component';
 import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
+import { KdvPipe } from './pipes/kdv/kdv.pipe';
+import { SaleDirective } from './directives/sale/sale.directive';
+import { FilterProductPipe } from './pipes/filter-product/filter-product.pipe';
+import { ClickedProductCardDirective } from './directives/clicked-product-card/clicked-product-card.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { ProductDashboardComponent } from './pages/product-dashboard/product-das
     CustomerFormComponent,
     CustomerDashboardComponent,
     ProductFormComponent,
-    ProductDashboardComponent
+    ProductDashboardComponent,
+    KdvPipe,
+    SaleDirective,
+    FilterProductPipe,
+    ClickedProductCardDirective
   ],
   imports: [
     BrowserModule,

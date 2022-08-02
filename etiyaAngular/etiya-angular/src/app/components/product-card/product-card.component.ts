@@ -7,9 +7,11 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent implements OnInit {
+  isCard:boolean=true;
+  onMouseColor:string = 'yellow'
+  onSaleText:string = 'İndirim!!'
   @Input() product!:Product;
   @Output() onBtnClick=new EventEmitter();
-  constructor() { }
 
   ngOnInit(): void {
   }
