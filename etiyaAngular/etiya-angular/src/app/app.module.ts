@@ -11,9 +11,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CategoryListComponent } from './components/category-list/category-list.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { UpdateCustomerComponent } from './pages/update-customer/update-customer.component'
+import { CustomerDashboardComponent } from './pages/customer-dashboard/customer-dashboard.component'
+import { CustomerFormComponent } from './pages/customer-form/customer-form.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ProductFormComponent } from './pages/product-form/product-form.component';
+import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,16 +28,19 @@ import { UpdateCustomerComponent } from './pages/update-customer/update-customer
     NavbarComponent,
     ProductCardComponent,
     CategoryListComponent,
-    RegisterComponent,
-    DashboardComponent,
-    UpdateCustomerComponent
+    CustomerFormComponent,
+    CustomerDashboardComponent,
+    ProductFormComponent,
+    ProductDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

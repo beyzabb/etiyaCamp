@@ -1,4 +1,4 @@
-<form [formGroup]="registerForm">
+<form *ngIf="customerForm" [formGroup]="customerForm">
     <div class="mb-3">
         <label for="companyName" class="form-label">Company Name</label>
         <input type="text" class="form-control" id="companyName" placeholder="" formControlName="companyName"/>
@@ -36,7 +36,7 @@
       
       <div class="mb-3">
         <label for="country" class="form-label">Country</label>
-        <input type="text" class="form-control" id="country" placeholder="" formControlName="country"/>
+        <input type="text" class="form-control" id="country" placeholder="" formControlName="country" />
       </div>
       
       <div class="mb-3">
@@ -48,5 +48,5 @@
         <label for="customerKey" class="form-label">Customer Key</label>
         <input type="text" class="form-control" id="customerKey" placeholder="" formControlName="customerKey"/>
       </div>
-    <div class="mb-3"><button class="btn btn-dark" (click)="register()">Sign Up</button></div>
+    <div class="mb-3"><button class="btn btn-dark" (click)="save()">Save</button></div>
 </form>

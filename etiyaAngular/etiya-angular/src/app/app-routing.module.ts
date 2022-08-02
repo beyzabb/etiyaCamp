@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProductComponent } from './pages/add-product/add-product.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CustomerDashboardComponent } from './pages/customer-dashboard/customer-dashboard.component';
+import { CustomerFormComponent } from './pages/customer-form/customer-form.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { UpdateCustomerComponent } from './pages/update-customer/update-customer.component';
+import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
+import { ProductFormComponent } from './pages/product-form/product-form.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",redirectTo:"homepage"},
   {path:"add-product",component:AddProductComponent},
   {path:"homepage",component:HomepageComponent},
-  {path:"register",component:RegisterComponent},
-  {path:"dashboard/customer",component:DashboardComponent},
-  {path:"dashboard/customer/:id",component:UpdateCustomerComponent}
+
+  {path:"dashboard/customer/add",component:CustomerFormComponent},
+  {path:"dashboard/customers",component:CustomerDashboardComponent},
+  {path:"dashboard/customer/:id",component:CustomerFormComponent},
+
+  {path:"dashboard/product/add",component:ProductFormComponent},
+  {path:"dashboard/products",component:ProductDashboardComponent},
+  {path:"dashboard/product/:id",component:ProductFormComponent}
 
 ];
 
