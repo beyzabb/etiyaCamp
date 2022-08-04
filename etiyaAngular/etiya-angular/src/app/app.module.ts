@@ -22,6 +22,10 @@ import { KdvPipe } from './pipes/kdv/kdv.pipe';
 import { SaleDirective } from './directives/sale/sale.directive';
 import { FilterProductPipe } from './pipes/filter-product/filter-product.pipe';
 import { ClickedProductCardDirective } from './directives/clicked-product-card/clicked-product-card.directive';
+import { IfNotDirective } from './directives/ifNot/if-not.directive';
+import { WelcomeDirective } from './directives/welcome/welcome.directive';
+import { MultipleDirective } from './directives/multiple/multiple.directive';
+import { OrderListComponent } from './components/order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { ClickedProductCardDirective } from './directives/clicked-product-card/c
     KdvPipe,
     SaleDirective,
     FilterProductPipe,
-    ClickedProductCardDirective
+    ClickedProductCardDirective,
+    IfNotDirective,
+    WelcomeDirective,
+    MultipleDirective,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,

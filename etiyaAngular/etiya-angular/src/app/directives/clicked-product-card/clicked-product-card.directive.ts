@@ -4,15 +4,18 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
   selector: '[appClickedProductCard]'
 })
 export class ClickedProductCardDirective {
-  @Input() inOnClick:boolean = true;
+  isOnClick:boolean = false;
   constructor(private elementRef:ElementRef) { }
   
-  @HostListener('click',) onClick(){
-    if(!this.inOnClick) return;
-    this.elementRef.nativeElement.style.opacity = 0.7;
-  }
-
-  @HostListener('dblclick',) onDblClick(){
-    this.elementRef.nativeElement.style.opacity = 1;
+  @HostListener('click') onClick(){
+    if(!this.isOnClick) {
+      this.isOnClick=true;
+      this.elementRef.nativeElement.style.opacity = 0.7;
+    }
+    
+    else if (this.isOnClick){
+      this.isOnClick=false;
+      this.elementRef.nativeElement.style.opacity = 1;
+    }
   }
 }
