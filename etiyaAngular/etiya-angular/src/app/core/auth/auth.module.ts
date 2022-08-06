@@ -5,6 +5,10 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from "@auth0/angular-jwt";
+import { tokenGetter } from './services/auth.service';
+import { environment } from 'src/environments/environment';
+
 
 
 @NgModule({
@@ -15,7 +19,14 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: [environment.apiUrl],
+        disallowedRoutes: [],
+      },
+    })
   ]
 })
 export class AuthModule { }

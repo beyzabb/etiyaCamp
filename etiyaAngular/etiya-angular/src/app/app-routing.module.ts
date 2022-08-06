@@ -20,6 +20,7 @@ const routes: Routes = [
   {path:"dashboard/product/:id",component:ProductFormComponent},
 
   {path:"order-list",component:OrderListComponent},
+  { path: 'storage', loadChildren: () => import('./core/storage/storage.module').then(m => m.StorageModule) },
 
 ];
 
