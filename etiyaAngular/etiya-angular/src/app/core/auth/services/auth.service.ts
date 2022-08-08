@@ -11,9 +11,9 @@ import { MessageResultModel } from '../../models/messageResultModel';
 import { LocalStorageService } from '../../storage/services/local-storage.service';
 import { UserForLoginModel } from '../models/userForLoginModel';
 import { UserLoginResponseModel } from '../models/userLoginResponseModel';
-import { AuthStates } from '../store/auth.reducer';
+import { AuthStates } from '../store/auth.reducers';
 import { TokenUserModel } from '../models/tokenUserModel';
-import { setTokenUserModel } from '../store/actions/auth.actions';
+import { removeTokenUserModel, setTokenUserModel } from '../store/actions/auth.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -46,17 +46,21 @@ export class AuthService {
   get isAuthendicated(): boolean {
     if (!this.jwtHelperService.tokenGetter()) return false
     if (this.jwtHelperService.isTokenExpired()) return false
-
-
     return true;
   }
 
   setTokenUserModel(tokenUserModel: TokenUserModel) {
     this.store.dispatch(setTokenUserModel({ tokenUserModel })); // tokenUserModel -> tokenUserModel:tokenUserModel ile aynı
   }
+
+  removeUserToken() {
+    this.store.dispatch(removeTokenUserModel());
+  }
   
   logOut() {
-      this.localStorageService.remove('token')
+      this.removeUserToken()
+      this.localStorageService.remove('token');
+      
   }
 
 }
