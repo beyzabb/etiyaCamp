@@ -4,6 +4,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProductsModule } from '../features/products/products.module';
 import { CategoriesModule } from '../features/categories/categories.module';
+import { SharedRoutingModule } from './shared-routing.module';
+import { CartModule } from '../features/cart/cart.module';
 
 
 
@@ -14,8 +16,10 @@ import { CategoriesModule } from '../features/categories/categories.module';
   ],
   imports: [
     CommonModule,
+    SharedRoutingModule,
     ProductsModule,
-    CategoriesModule
+    CategoriesModule,
+    CartModule
   ],
   exports:[
     NavbarComponent

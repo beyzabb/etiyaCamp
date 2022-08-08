@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { CartSummaryService } from 'src/app/features/cart/services/cart-summary.service';
 import { Product } from 'src/app/features/products/models/product';
 import { ProductsService } from 'src/app/features/products/services/products/products.service';
 
@@ -29,14 +30,12 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(product:Product){
-    let itemToFind=this.cartItems.find(c=>c==product)
-    if(!itemToFind){
-      this.cartItems.push(product)
+    let itemToFind = this.cartItems.find((c)=> c == product.name);
+    if (!itemToFind) {
+      this.cartItems.push(product.name)
     }
     else{
-      console.log("Ürün zaten ekli!")
+      console.log("Ürün zaten ekli!!")
     }
-    
   }
-
 }

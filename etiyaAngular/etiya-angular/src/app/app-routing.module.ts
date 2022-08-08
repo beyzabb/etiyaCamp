@@ -8,19 +8,8 @@ import { ProductDashboardComponent } from './features/products/pages/product-das
 import { ProductFormComponent } from './features/products/pages/product-form/product-form.component';
 
 const routes: Routes = [
-  {path:"",pathMatch:"full",redirectTo:"homepage"},
-  {path:"homepage",component:HomepageComponent},
 
-  {path:"dashboard/customer/add",component:CustomerFormComponent},
-  {path:"dashboard/customers",component:CustomerDashboardComponent},
-  {path:"dashboard/customer/:id",component:CustomerFormComponent},
-
-  {path:"dashboard/product/add",component:ProductFormComponent},
-  {path:"dashboard/products",component:ProductDashboardComponent},
-  {path:"dashboard/product/:id",component:ProductFormComponent},
-
-  {path:"order-list",component:OrderListComponent},
-  { path: 'storage', loadChildren: () => import('./core/storage/storage.module').then(m => m.StorageModule) },
+  
 
 ];
 

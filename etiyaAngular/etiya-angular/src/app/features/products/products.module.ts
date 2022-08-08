@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
 import { ProductFormComponent } from './pages/product-form/product-form.component';
 import { CoreModule } from 'src/app/core/core.module';
+import { CartModule } from '../cart/cart.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CoreModule } from 'src/app/core/core.module';
     ProductsRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
+    CartModule
   ],
   exports:[
     ProductCardComponent,

@@ -15,8 +15,9 @@ export class LoginGuard implements CanActivate {
       if(!this.authService.isAuthendicated){
         this.router.navigateByUrl('login')
         this.toastrService.warning('Please sign in to continue!')
+        return false;
       }
-    return true;
+      return true;
   }
   
 }

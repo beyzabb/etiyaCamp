@@ -15,6 +15,7 @@ import { CategoriesModule } from './features/categories/categories.module';
 import { CustomersModule } from './features/customers/customers.module';
 import { OrdersModule } from './features/orders/orders.module';
 import { SuppliersModule } from './features/suppliers/suppliers.module';
+import { CartModule } from './features/cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SuppliersModule } from './features/suppliers/suppliers.module';
     CategoriesModule,
     CustomersModule,
     OrdersModule,
-    SuppliersModule
+    SuppliersModule,
+    CartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CartSummaryService } from 'src/app/features/cart/services/cart-summary.service';
 import { Product } from 'src/app/features/products/models/product';
 
 @Component({
@@ -13,11 +14,13 @@ export class ProductCardComponent implements OnInit {
   @Input() product!:Product;
   @Output() onBtnClick=new EventEmitter();
 
+  constructor(private cartService:CartSummaryService){}
+
   ngOnInit(): void {
   }
 
   addToCartEvent(){
-    this.onBtnClick.emit(this.product);
+    this.cartService.CartItems = {product:this.product,quantity:1}
   }
 
 }
