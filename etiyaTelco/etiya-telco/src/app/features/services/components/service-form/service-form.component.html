@@ -1,0 +1,12 @@
+<div class="container w-75">
+    <h3 class="m-3">Add Service</h3>
+    <form [formGroup]="serviceForm" (ngSubmit)="add()" >
+      <div class="form-group m-3">
+        <label for="name" class="block">Name</label>
+        <input id="name" formControlName="name" type="text" class="form-control" pInputText />
+        
+      </div>
+      <button pButton label="Register" type="submit" class="p-button-success" icon="pi pi-check" iconPos="left"></button>
+      
+    </form>
+</div>
