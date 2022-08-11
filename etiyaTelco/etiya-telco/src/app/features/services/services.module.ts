@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ServicesRoutingModule } from './services-routing.module';
-import { ServiceListComponent } from './components/service-list/service-list.component';
 import { ServiceFormComponent } from './components/service-form/service-form.component';
 
 import {RatingModule} from 'primeng/rating';
@@ -11,12 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ToolbarModule} from 'primeng/toolbar';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
+import { ServiceDashboardComponent } from './components/service-dashboard/service-dashboard.component';
 
 
 @NgModule({
   declarations: [
-    ServiceListComponent,
-    ServiceFormComponent
+    ServiceFormComponent,
+    ServiceDashboardComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +29,9 @@ import {TableModule} from 'primeng/table';
     ToolbarModule,
     ReactiveFormsModule,
     FormsModule
+  ],
+  exports:[
+    ServiceDashboardComponent
   ]
 })
 export class ServicesModule { }
