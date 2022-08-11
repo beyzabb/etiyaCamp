@@ -1,0 +1,24 @@
+<div class="row">
+    <ng-container [ngSwitch]="fetchStatus">
+        <ng-template let-product ngFor [ngForOf]="productList | filterProduct:categoryId" ngSwitchCase="'loaded'">
+            <div class="col-4 mt-2 mb-3">
+                <etiya-product-card [product]="product"></etiya-product-card>
+            </div>
+        </ng-template>
+
+        <ng-container class="row" *ngSwitchCase="'pending'">
+            <div class="col-4 mb-3 mt-4" *ngFor="let i of pageSize | createFakeArray" >
+                <etiya-card-skeleton></etiya-card-skeleton>
+            </div>
+        </ng-container>
+        
+        <ng-container *ngSwitchCase="'error'" >
+            <div class="col-12">
+                <div class="alert alert-danger" role="alert">
+                    Enabled to fetch 
+                  </div>
+            </div>            
+        </ng-container>  
+    </ng-container>
+</div>
+
