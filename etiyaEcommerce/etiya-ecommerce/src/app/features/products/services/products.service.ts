@@ -18,4 +18,8 @@ export class ProductsService {
   getAllByCategories(categoryId: number): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.apiControllerUrl + `?categoryId=${categoryId}`)
   }
+
+  add(product:Product):Observable<Product>{
+    return this.httpClient.post<Product>(this.apiControllerUrl,product)
+  }
 }

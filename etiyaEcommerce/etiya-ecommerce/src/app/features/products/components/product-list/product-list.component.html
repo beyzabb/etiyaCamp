@@ -1,4 +1,5 @@
 <div class="row">
+    <h3>Products</h3>
     <ng-container [ngSwitch]="fetchStatus">
         <ng-template let-product ngFor [ngForOf]="productList | filterProduct:categoryId" ngSwitchCase="'loaded'">
             <div class="col-4 mt-2 mb-3">
