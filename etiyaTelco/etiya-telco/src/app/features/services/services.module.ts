@@ -11,6 +11,8 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
 import { ServiceDashboardComponent } from './components/service-dashboard/service-dashboard.component';
+import { CoreModule } from 'src/app/core/core.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { ServiceDashboardComponent } from './components/service-dashboard/servic
     BrowserAnimationsModule,
     ToolbarModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CoreModule,
+    SharedModule
   ],
   exports:[
     ServiceDashboardComponent

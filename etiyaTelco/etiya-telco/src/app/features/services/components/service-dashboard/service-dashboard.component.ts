@@ -11,22 +11,22 @@ import { ServicesService } from '../../services/services.service';
 export class ServiceDashboardComponent implements OnInit {
 
   services!: Service[];
+  fetchStatus = 'pending';
+  pageSize = 5
 
   constructor(private serviceService: ServicesService,private router:Router) { }
 
   ngOnInit() {
-      this.getServices();
-  }
-
-  getServices(){
-    this.serviceService.getAll().subscribe(data => this.services = data);
+    setTimeout(() => {
+      this.getServicesList();
+    }, 1500);
   }
 
   deleteService(id:number){
     if(confirm("Are you sure want to delete?")){
       this.serviceService.delete(id).subscribe(()=>{
         setTimeout(() => {
-          this.getServices();
+          this.getServicesList();
         }, 1000);
       })
     } 
@@ -36,34 +36,19 @@ export class ServiceDashboardComponent implements OnInit {
      this.router.navigateByUrl(`service/${selectedService.id}`);
   }
 
-
-
-
-
-
-    // first = 0;
-
-    // rows = 5;
-
-
-    // next() {
-    //     this.first = this.first + this.rows;
-    // }
-
-    // prev() {
-    //     this.first = this.first - this.rows;
-    // }
-
-    // reset() {
-    //     this.first = 0;
-    // }
-
-    // isLastPage(): boolean {
-    //     return this.services ? this.first === (this.services.length - this.rows): true;
-    // }
-
-    // isFirstPage(): boolean {
-    //     return this.services ? this.first === 0 : true;
-    // }
-
+  getServicesList(){
+    this.fetchStatus = 'pending'
+   setTimeout(() => {
+     this.serviceService.getAll().subscribe((data =>{
+       this.services = data
+       this.fetchStatus = 'loaded'
+     }),
+     (error) =>{
+       this.fetchStatus = 'error'
+     })
+   }, 1000);
+ 
+ }
 }
+
+

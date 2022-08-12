@@ -6,6 +6,7 @@ import { ServicesModule } from './services/services.module';
 
 import { HomepageComponent } from './common/pages/homepage/homepage.component';
 import { SharedModule } from '../shared/shared.module';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     FeaturesRoutingModule,
     ServicesModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ]
 })
 export class FeaturesModule { }
