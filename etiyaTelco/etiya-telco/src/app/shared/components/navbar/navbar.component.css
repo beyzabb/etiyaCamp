@@ -1,0 +1,19 @@
+nav{
+    background-color: #114663; 
+}
+.container-fluid .navbar-brand {
+    color: #ffff;
+}
+.nav-item .nav-link {
+    color: #ffff;
+}
+.d-flex .btn-light{
+    background-color: orange;
+    color:white;
+    border-color: orange;
+}
+.d-flex .btn-outline-light{
+    background-color: #398AB9;
+    color:white;
+    border-color: #398AB9;
+}

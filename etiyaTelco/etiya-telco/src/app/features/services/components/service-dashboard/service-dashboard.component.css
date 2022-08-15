@@ -1,0 +1,79 @@
+.card{
+    background-color: #398AB9; 
+    margin-bottom: 50px;
+}
+.p-button-success{
+    background-color: #519259; 
+    margin-right: 30px;
+}
+#update-delete-col{
+    display:flex;
+    justify-content:end; 
+    padding-right: 50px;
+}
+tr th{
+    background-color: #398AB9;
+    color: white;
+}
+
+tr td{
+    background-color: #398AB9;
+    color: white;
+}
+.p-button-help{
+    margin-right: 20px; 
+    background-color: #F0BB62;
+}
+.table-st{
+    margin: 20px;
+}
+
+::ng-deep .p-datatable .p-datatable-footer{
+    background: #398AB9;
+    color: white;
+}
+
+::ng-deep .p-paginator{
+    background: #398AB9;
+}
+
+::ng-deep .p-paginator .p-paginator-current{
+    color: white;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight{
+    color:white!important;
+    background: #F0BB62;
+}
+
+::ng-deep .p-paginator .p-paginator-next{
+    color: white;
+}
+::ng-deep .p-paginator .p-paginator-prev{
+    color: white;
+}
+::ng-deep .p-paginator .p-paginator-first{
+    color: white;
+}
+::ng-deep .p-paginator .p-paginator-last{
+    color: white;
+}
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page{
+    color: white;
+}
+::ng-deep .p-dropdown{
+    background: #F0BB62;
+    color:white
+}
+::ng-deep .p-dropdown-panel{
+    background: #F0BB62;
+}
+::ng-deep .p-inputtext{
+    color: white;
+}
+::ng-deep .p-dropdown .p-dropdown-trigger{
+    color: white;
+}
+::ng-deep .p-toolbar{
+    background: #EFEFEF;
+}

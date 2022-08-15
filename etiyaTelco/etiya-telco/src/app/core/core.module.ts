@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { CoreRoutingModule } from './core-routing.module';
 import { OverlayLoadingComponent } from './components/overlay-loading/overlay-loading.component';
 import { CreateFakeArrayPipe } from './pipe/create-fake-array.pipe';
-
+import { AuthModule } from './auth/auth.module';
+import { StorageModule } from './storage/storage.module';
 
 
 @NgModule({
@@ -15,6 +16,8 @@ import { CreateFakeArrayPipe } from './pipe/create-fake-array.pipe';
   imports: [
     CommonModule,
     CoreRoutingModule,
+    AuthModule,
+    StorageModule
   ],
   exports:[
     OverlayLoadingComponent,

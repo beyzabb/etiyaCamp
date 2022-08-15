@@ -32,32 +32,36 @@
 
 
 
-
-<div class="row">
-    <ng-container [ngSwitch]="fetchStatus">
+<etiya-dashboard-layout>
+<div class="row">    
+    <ng-container [ngSwitch]="fetchStatus" class="mb-5">
         <div *ngSwitchCase="'loaded'" class="card">
-            <p-toolbar styleClass="p-mb-4">
-                <ng-template pTemplate="left">
-                    <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
+            <p-toolbar styleClass="m-4">
+                <ng-template pTemplate="right">
+                    <button pButton pRipple icon="pi pi-plus" class="p-button-success"
                         routerLink="/service/add"></button>
                 </ng-template>
+                <ng-template pTemplate="left">
+                    <h5>SERVICES</h5>
+                </ng-template>
             </p-toolbar>
+            
             <p-table [value]="services" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                [rowsPerPageOptions]="[5,10,15]">
+                [rowsPerPageOptions]="[5,10,15]" class="table-st">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>Id</th>
-                        <th>Name</th>
-                        <th style="display:flex;justify-content:end; padding-right: 50px;">Update - Delete</th>
+                        <th >Name</th>
+                        <th id="update-delete-col">Update - Delete</th>
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="body" let-service>
+                <ng-template pTemplate="body"  let-service>
                     <tr>
                         <td>{{service.id}}</td>
                         <td>{{service.name}}</td>
                         <td style="display:flex;justify-content:end; padding-right: 50px;">
-                            <button style="margin-right: 20px" pButton pRipple icon="pi pi-pencil"
+                            <button pButton pRipple icon="pi pi-pencil"
                                 (click)="selectedServiceId(service)"
                                 class="p-button-rounded p-button-help p-mr-2"></button>
                             <button pButton pRipple icon="pi pi-trash" (click)="deleteService(service.id)"
@@ -85,4 +89,5 @@
             </div>
         </ng-container>
     </ng-container>
-</div>`
+</div>
+</etiya-dashboard-layout>

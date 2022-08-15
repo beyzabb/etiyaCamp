@@ -1,0 +1,22 @@
+@import "primeflex/primeflex.css";
+.card{
+    background-color: #398AB9!important;
+}
+.text-900{
+    color: white !important;
+}
+
+.text-600{
+    color: white !important;
+}
+
+button{
+    background-color: #F0BB62 !important;
+}
+
+.text-500{
+    color: orange !important;
+}
+.text-blue-500{
+    color: orange !important;
+}

@@ -22,7 +22,7 @@ import { OverlayLoadingInterceptor } from './core/interceptors/overlay-loading/o
     FeaturesModule,
     HttpClientModule,
     ToastModule,
-    CoreModule,
+    CoreModule
   ],
   providers: [
     MessageService,
