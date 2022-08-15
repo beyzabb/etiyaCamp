@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { AuthService } from 'src/app/core/auth/services/auth/auth.service';
 
 @Component({
   selector: 'etiya-navbar',
@@ -8,11 +9,17 @@ import { MenuItem } from 'primeng/api';
 })
 export class NavbarComponent implements OnInit {
   items!: MenuItem[];
-
+  constructor(private authService:AuthService){}
   ngOnInit() {
   }
 
-  
+  logOut(){
+    this.authService.logOut();
+  }
+
+  isLoggedIn(){
+    return this.authService.isAuthenticated
+  }
 
 }
 

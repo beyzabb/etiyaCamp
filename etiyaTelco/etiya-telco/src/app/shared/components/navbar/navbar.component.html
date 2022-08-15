@@ -26,8 +26,8 @@
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-light" type="submit" routerLink="/login"
-          style="margin-right: 3px;">Login</button>
-        <button class="btn btn-light" type="submit" routerLink="/register">Sign Up</button>
+          style="margin-right: 3px;" *ngIf="isLoggedIn()==false">Login</button>
+        <button class="btn btn-light" type="submit" (click)="logOut()" *ngIf="isLoggedIn()==true" routerLink="/login">Log Out</button>
       </form>
     </div>
   </div>
