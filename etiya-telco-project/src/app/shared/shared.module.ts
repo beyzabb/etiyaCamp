@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { OverlayTitleComponent } from './components/overlay-title/overlay-title.component';
 import { SideFilterComponent } from './components/side-filter/side-filter.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { InfoTitleComponent } from './components/info-title/info-title.component';
+import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 
 
 
@@ -10,15 +12,19 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   declarations: [
     OverlayTitleComponent,
     SideFilterComponent,
-    NavbarComponent
+    NavbarComponent,
+    InfoTitleComponent,
+    MainLayoutComponent
   ],
   imports: [
     CommonModule
   ],
-  exports:[
+  exports: [
     OverlayTitleComponent,
-  SideFilterComponent,
-  NavbarComponent
+    SideFilterComponent,
+    NavbarComponent,
+    InfoTitleComponent,
+    MainLayoutComponent
   ]
 })
 export class SharedModule { }
